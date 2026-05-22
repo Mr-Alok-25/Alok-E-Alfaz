@@ -1,75 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Deep Shayari</title>
-
+  <title>Motivation Shayari | Alok E Alfaz</title>
   <link rel="stylesheet" href="../css/style.css">
-
 </head>
-
 <body>
 
   <nav>
-
-    <h1>Alok E Alfaz ✒</h1>
-
+    <h1>Alok E Alfaz 📖</h1>
   </nav>
 
-
   <section class="hero">
-
-    <h2>Motivation</h2>
-
+    <h2>Motivation Shayari 🚀</h2>
   </section>
 
-
-  <section class="volumes" id="shayari-container">
-
-  </section>
-
+  <section class="volumes" id="shayari-container"></section>
 
   <script src="../js/shayari.js"></script>
+  <script src="../js/script.js"></script>
 
   <script>
-
-    const container = document.getElementById("shayari-container");
-
-    const currentTopic = "Motivation";
-
-
-    const filteredShayari = shayariData.filter(
-
-      shayari => shayari.topics.includes(currentTopic)
-
-    );
-
-
-    filteredShayari.forEach(shayari => {
-
-      container.innerHTML += `
-
-        <div class="card">
-
-          <h2>${shayari.title}</h2>
-
-          <p>${shayari.text}</p>
-
-          <p>
-            <strong>${shayari.volume}</strong>
-          </p>
-
-        </div>
-
-      `;
-
+    // Page load hote hi sirf 'motivation' topic ki shayari display karein
+    document.addEventListener("DOMContentLoaded", () => {
+        if (typeof displayTopicShayari === "function") {
+            displayTopicShayari('motivation');
+        }
     });
-
   </script>
 
 </body>
 </html>
-

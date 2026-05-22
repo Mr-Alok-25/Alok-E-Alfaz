@@ -977,6 +977,7 @@ nav .logo {
   }
 }
 
-.shayari-text {
-    white-space: pre-line;
+/* style.css ke bilkul end mein purane code ko hata kar ye likho */
+.shayari-card p {
+    white-space: pre-line !important;
 }

@@ -32,7 +32,7 @@ function displayShayari(searchText = "") {
 }
 
 // ========================================================
-// 3. VOLUME FILTER FUNCTION (Naya Feature)
+// 3. VOLUME FILTER FUNCTION (For Each Volume)
 // ========================================================
 function displayVolumeShayari(volumeNumber) {
     if (!container) return;
@@ -42,6 +42,11 @@ function displayVolumeShayari(volumeNumber) {
 
     // Sirf us volume ka data filter karein
     const filteredShayari = shayariData.filter(s => String(s.volume) === String(volumeNumber));
+
+    if (filteredShayari.length === 0) {
+        grid.innerHTML = `<p style="color: #bbb; grid-column: 1/-1; text-align: center; padding: 20px;">Is Volume mein abhi koi shayari nahi hai.</p>`;
+        return;
+    }
 
     filteredShayari.forEach(s => {
         grid.innerHTML += `
@@ -54,7 +59,41 @@ function displayVolumeShayari(volumeNumber) {
 }
 
 // ========================================================
-// 4. RECENT 15 SHAYARI
+// 4. TOPIC FILTER FUNCTION (Including All Topics)
+// ========================================================
+function displayTopicShayari(topicName) {
+    if (!container) return;
+    
+    container.innerHTML = `<h2 class="section-title">Topic: ${topicName.toUpperCase()}</h2><div class="shayari-grid"></div>`;
+    const grid = container.querySelector('.shayari-grid');
+
+    // Filter shayaris where topics array includes the topicName
+    const filteredShayari = shayariData.filter(s => {
+        if (Array.isArray(s.topics)) {
+            return s.topics.some(t => t.toLowerCase() === topicName.toLowerCase());
+        } else if (typeof s.topics === 'string') {
+            return s.topics.toLowerCase() === topicName.toLowerCase();
+        }
+        return false;
+    });
+
+    if (filteredShayari.length === 0) {
+        grid.innerHTML = `<p style="color: #bbb; grid-column: 1/-1; text-align: center; padding: 20px;">Is topic mein abhi koi shayari nahi hai.</p>`;
+        return;
+    }
+
+    filteredShayari.forEach(s => {
+        grid.innerHTML += `
+            <div class="shayari-card">
+                <h3>${s.title}</h3>
+                <p class="shayari-text">"${s.text}"</p>
+            </div>
+        `;
+    });
+}
+
+// ========================================================
+// 5. RECENT 15 SHAYARI
 // ========================================================
 function loadRecentShayari() {
     if (!container) return;
@@ -78,7 +117,7 @@ function loadRecentShayari() {
 }
 
 // ========================================================
-// 5. WEBSITE AGE TRACKER
+// 6. WEBSITE AGE TRACKER
 // ========================================================
 function calculateWebsiteAge() {
     const startDate = new Date('2025-11-01');
