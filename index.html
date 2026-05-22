@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alok E Alfaz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <h1 class="logo">Alok E Alfaz ✨</h1>
+    <div class="nav-links">
+      <a href="#" class="nav-item active">Home</a>
+      <a href="#volumes-section" class="nav-item">Volumes</a>
+      <a href="#topics-section" class="nav-item">Topics</a>
+      <a href="about.html" class="nav-item">About</a>
+    </div>
+  </nav>
+
+  <section class="hero-cover">
+    <div class="hero-split-container">
+      <div class="hero-left-block">
+        <span class="welcome-text">Welcome to</span>
+        <h1 class="main-title">Alok E Alfaz <span class="feather-icon">🖋️</span></h1>
+        <p class="tagline">Meri kalam se nikle kuch alfaz, <br>Jo dil ko chhoo jaaye...</p>
+        <blockquote class="hero-quote">
+          “Shayari sirf lafzon ka khel nahi, <br>Yeh dil ki gehraiyon ka aaina hai.”
+        </blockquote>
+      </div>
+
+      <div class="hero-right-block">
+        <div class="vertical-buttons">
+          <a href="#volumes-section" class="btn-primary">Explore Volumes</a>
+          <a href="#shayari-container" class="btn-secondary" onclick="loadRecentShayari()">Recent Shayari</a>
+          <a href="#searchInput" class="btn-secondary">Read Shayari</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="volumes" id="volumes-section">
+    <div class="card card-volume-1">
+      <div class="card-content">
+        <h2>Volume 1</h2>
+        <p>Deep Shayari</p>
+        <a href="volumes/volume1.html">Open Volume</a>
+      </div>
+    </div>
+    <div class="card card-volume-2">
+      <div class="card-content">
+        <h2>Volume 2</h2>
+        <p>Mohabbat Aur Jazbaat</p>
+        <a href="volumes/volume2.html">Open Volume</a>
+      </div>
+    </div>
+    <div class="card card-volume-3">
+      <div class="card-content">
+        <h2>Volume 3</h2>
+        <p>Zindagi Aur Reality</p>
+        <a href="volumes/volume3.html">Open Volume</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="topics-container" id="topics-section">
+    <h2 class="section-title">Shayari Categories</h2>
+    <div class="topics-grid">
+      <a href="topics/alone.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">🖤</span><h3>Alone</h3></div></a>
+      <a href="topics/deep.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">🌌</span><h3>Deep</h3></div></a>
+      <a href="topics/life.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">🌿</span><h3>Life</h3></div></a>
+      <a href="topics/love.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">❤️</span><h3>Love</h3></div></a>
+      <a href="topics/memories.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">⏳</span><h3>Memories</h3></div></a>
+      <a href="topics/motivation.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">🔥</span><h3>Motivation</h3></div></a>
+      <a href="topics/reality.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">👁️</span><h3>Reality</h3></div></a>
+      <a href="topics/sad.html" class="topic-tile"><div class="topic-tile-content"><span class="topic-icon">💧</span><h3>Sad</h3></div></a>
+    </div>
+  </section>
+
+  <div class="top-bar">
+    <div class="search-box-centered">
+      <input type="text" id="searchInput" placeholder="Type keywords to search Shayari...">
+    </div>
+  </div>
+
+  <section class="volumes" id="shayari-container">
+    </section>
+
+  <footer class="main-footer" id="main-footer">
+    <div class="footer-logo">Alok E Alfaz</div>
+    <p>&copy; 2026 Alok E Alfaz. All Rights Reserved. Crafted with Jazbaat.</p>
+  </footer>
+
+  <script src="js/shayari.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html></html>
