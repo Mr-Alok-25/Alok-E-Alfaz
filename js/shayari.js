@@ -1,24 +1,53 @@
 // Variable ka naam "shayariData" hona chahiye
 const shayariData = [
     {
-        title: "Tanhai Ka Aalam",
-        text: "Dil ki baatein dil hi jaane, khamoshi ko hum pehchane.",
+        title: "Muddaten guzre us baat",
+        // Dekho yahan maine " ki jagah ` use kiya hai
+        text: `Muddaten guzre us baat, us zamane ko,
+Tum aaj aaye ho mujhko aazmane ko...
+
+Dil ne toh kab ka chhod diya tha zikr tera,
+Phir kyun jagaya dard ke iss afsaane ko...
+
+Hum bhi muskura dete teri ek ada par,
+Gar tum na aate phir se dil dukhane ko...
+
+Ab laut bhi jao toh kya badal paoge,
+Raakh kabhi kaafi nahi hoti ghar jalane ko...`,
         volume: "1",
-        topics: ["alone"], // Maine yahan 'topics' (plural) kar diya hai
+        topics: ["alone", "sad","deep"],
+        date: "2026-05-22"
+    },
+    // Agli shayari...
+
+    {
+        title: "Kaisi Mohabbat h",
+        text: `तुम रोकती भी नहीं, और जाने भी नहीं देती,
+              ये कैसी मोहब्बत है
+            जो जीने भी नहीं देती। .`,
+        volume: "2",
+        topics: ["life", "love"],
         date: "2026-05-22"
     },
     {
-        title: "Zindagi Ka Safar",
-        text: "Raaste badal gaye, par manzil wahi hai.",
-        volume: "3",
-        topics: ["life"],
-        date: "2026-05-21"
-    },
-    {
-        title: "Mohabbat Ki Raah",
-        text: "Tum mile toh jaise khuda mil gaya.",
-        volume: "2",
+        title: "Hatheli pr",
+        text: `मुद्दतों की धूल थी… या तेरे हाल का असर,
+चाँद आ ठहरा है चुपके से मेरी हथेली पर।
+
+रात ने ओढ़ ली है तेरी यादों की चाँदनी,
+ख़्वाब टपके हैं सितारों से किसी सहेली पर।
+
+तेरी आँखों की नमी में भीगता रहता हूँ मैं,
+जैसे सावन उतर आया हो सूखी कलियों पर।
+
+एक तेरा ज़िक्र क्या आया हवाओं में,
+रूह महकने लगी वीरान सी हवेली पर।
+
+
+अब किसे देखूँ मैं — तुझे, या इस चाँद को,
+दोनों ही आ बैठे हैं मेरी हथेली पर… `,
+        volume: "1",
         topics: ["love"],
-        date: "2026-05-15"
+        date: "2026-05-22"
     }
 ];
