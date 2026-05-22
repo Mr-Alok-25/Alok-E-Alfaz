@@ -21,7 +21,7 @@ function displayShayari(searchText = "") {
         grid.innerHTML += `
             <div class="shayari-card">
                 <h3>${s.title}</h3>
-                <p>"${s.text}"</p>
+                <p class="shayari-text">"${s.text}"</p>
                 <div class="card-meta">
                     <strong>Vol: ${s.volume}</strong> | 
                     <span>${Array.isArray(s.topics) ? s.topics.join(", ") : s.topics}</span>
@@ -47,7 +47,7 @@ function displayVolumeShayari(volumeNumber) {
         grid.innerHTML += `
             <div class="shayari-card">
                 <h3>${s.title}</h3>
-                <p>"${s.text}"</p>
+                <p class="shayari-text">"${s.text}"</p>
             </div>
         `;
     });
@@ -69,7 +69,7 @@ function loadRecentShayari() {
         grid.innerHTML += `
             <div class="shayari-card">
                 <h3>${s.title}</h3>
-                <p>"${s.text}"</p>
+                <p class="shayari-text">"${s.text}"</p>
                 <small style="color: #666;">${s.date}</small>
             </div>
         `;

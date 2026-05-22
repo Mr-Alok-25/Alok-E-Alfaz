@@ -976,3 +976,7 @@ nav .logo {
     font-size: 24px;
   }
 }
+
+.shayari-text {
+    white-space: pre-line;
+}
