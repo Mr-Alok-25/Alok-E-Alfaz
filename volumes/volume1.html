@@ -6,6 +6,15 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="volume-page-body volume-1-bg">
+
+  <div id="readingModal" class="modal">
+    <span class="close-btn" onclick="closeReadingMode()">&times;</span>
+    <div class="modal-content">
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
   <nav class="navbar">
     <div class="logo">Alok E Alfaz ✨</div>
     <ul class="nav-links">
@@ -13,6 +22,7 @@
       <li><a href="../about.html">About</a></li>
     </ul>
   </nav>
+
   <div class="volume-page-container">
     <section class="book-title">
       <h1>Volume 1</h1>
@@ -20,6 +30,7 @@
     </section>
     <section class="volumes" id="shayari-container"></section>
   </div>
+
   <script src="../js/shayari.js"></script>
   <script src="../js/script.js"></script>
   

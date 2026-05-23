@@ -8,7 +8,7 @@ const searchInput = document.getElementById("searchInput");
 // 2. DISPLAY SHAYARI (Search & All)
 // ========================================================
 function displayShayari(searchText = "") {
-    if (!container) return; // Agar container nahi hai, toh stop
+    if (!container) return; 
     
     container.innerHTML = '<h2 class="section-title">Search Results</h2><div class="shayari-grid"></div>';
     const grid = container.querySelector('.shayari-grid');
@@ -18,8 +18,12 @@ function displayShayari(searchText = "") {
     );
 
     filteredShayari.forEach(s => {
+        // Encode text to safely pass in onclick function
+        const safeText = encodeURIComponent(s.text);
+        const safeTitle = encodeURIComponent(s.title);
+
         grid.innerHTML += `
-            <div class="shayari-card">
+            <div class="shayari-card" onclick="openReadingMode('${safeTitle}', '${safeText}')" style="cursor: pointer;">
                 <h3>${s.title}</h3>
                 <p class="shayari-text">"${s.text}"</p>
                 <div class="card-meta">
@@ -40,7 +44,6 @@ function displayVolumeShayari(volumeNumber) {
     container.innerHTML = `<h2 class="section-title">Volume ${volumeNumber}</h2><div class="shayari-grid"></div>`;
     const grid = container.querySelector('.shayari-grid');
 
-    // Sirf us volume ka data filter karein
     const filteredShayari = shayariData.filter(s => String(s.volume) === String(volumeNumber));
 
     if (filteredShayari.length === 0) {
@@ -49,8 +52,11 @@ function displayVolumeShayari(volumeNumber) {
     }
 
     filteredShayari.forEach(s => {
+        const safeText = encodeURIComponent(s.text);
+        const safeTitle = encodeURIComponent(s.title);
+
         grid.innerHTML += `
-            <div class="shayari-card">
+            <div class="shayari-card" onclick="openReadingMode('${safeTitle}', '${safeText}')" style="cursor: pointer;">
                 <h3>${s.title}</h3>
                 <p class="shayari-text">"${s.text}"</p>
             </div>
@@ -67,7 +73,6 @@ function displayTopicShayari(topicName) {
     container.innerHTML = `<h2 class="section-title">Topic: ${topicName.toUpperCase()}</h2><div class="shayari-grid"></div>`;
     const grid = container.querySelector('.shayari-grid');
 
-    // Filter shayaris where topics array includes the topicName
     const filteredShayari = shayariData.filter(s => {
         if (Array.isArray(s.topics)) {
             return s.topics.some(t => t.toLowerCase() === topicName.toLowerCase());
@@ -83,8 +88,11 @@ function displayTopicShayari(topicName) {
     }
 
     filteredShayari.forEach(s => {
+        const safeText = encodeURIComponent(s.text);
+        const safeTitle = encodeURIComponent(s.title);
+
         grid.innerHTML += `
-            <div class="shayari-card">
+            <div class="shayari-card" onclick="openReadingMode('${safeTitle}', '${safeText}')" style="cursor: pointer;">
                 <h3>${s.title}</h3>
                 <p class="shayari-text">"${s.text}"</p>
             </div>
@@ -105,8 +113,11 @@ function loadRecentShayari() {
     const recentShayari = sortedShayari.slice(0, 15);
 
     recentShayari.forEach(s => {
+        const safeText = encodeURIComponent(s.text);
+        const safeTitle = encodeURIComponent(s.title);
+
         grid.innerHTML += `
-            <div class="shayari-card">
+            <div class="shayari-card" onclick="openReadingMode('${safeTitle}', '${safeText}')" style="cursor: pointer;">
                 <h3>${s.title}</h3>
                 <p class="shayari-text">"${s.text}"</p>
                 <small style="color: #666;">${s.date}</small>
@@ -117,7 +128,35 @@ function loadRecentShayari() {
 }
 
 // ========================================================
-// 6. WEBSITE AGE TRACKER
+// 6. READING MODE FUNCTIONS (Modal Open/Close)
+// ========================================================
+function openReadingMode(title, text) {
+    const modal = document.getElementById("readingModal");
+    if (!modal) return;
+
+    document.getElementById("modalTitle").innerText = decodeURIComponent(title);
+    document.getElementById("modalText").innerText = `"${decodeURIComponent(text)}"`;
+    
+    modal.style.display = "flex";
+}
+
+function closeReadingMode() {
+    const modal = document.getElementById("readingModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Modal ke bahar click karne par bhi close ho jaye
+window.onclick = function(event) {
+    const modal = document.getElementById("readingModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// ========================================================
+// 7. WEBSITE AGE TRACKER
 // ========================================================
 function calculateWebsiteAge() {
     const startDate = new Date('2025-11-01');

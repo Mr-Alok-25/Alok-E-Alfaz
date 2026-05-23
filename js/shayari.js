@@ -46,8 +46,24 @@ Raakh kabhi kaafi nahi hoti ghar jalane ko...`,
 
 अब किसे देखूँ मैं — तुझे, या इस चाँद को,
 दोनों ही आ बैठे हैं मेरी हथेली पर… `,
-        volume: "1",
+        volume: "2",
         topics: ["love"],
         date: "2026-05-22"
+    },
+    {title: "Adhura h",
+        text: `Har ek gaam  adhura hai, har ek baat adhuri hai,
+Har din hai adhura, har raat adhuri hai।
+
+Tere bina jo likhu main, woh jazbaat adhure hain,
+Meri hasi ke peeche chhupe alfaaz adhure hain।
+
+Jo khwaab sajaye humne baith kar kabhi saath,
+Aaj un khwaabon ki har  mulaqaat adhuri hai।
+
+Har ek din hai adhura, har ek baat adhuri hai...
+`,
+        volume: "1",
+        topics: ["sad","alone"],
+        date: "2026-05-23"
     }
 ];
