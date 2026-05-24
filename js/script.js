@@ -186,3 +186,49 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener("input", (e) => displayShayari(e.target.value));
     }
 });
+
+// ========================================================
+// RE-FIXED COUNTER FOR ABOUT SECTION (SAFE CHECK ADDED)
+// ========================================================
+function calculateWebsiteAge() {
+    const startDate = new Date('2026-05-01');
+    const currentDate = new Date(); // Aaj ki current date (2026-05-24)
+    
+    let diffInMs = currentDate - startDate;
+    const totalDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+    
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+    let days = currentDate.getDate() - startDate.getDate();
+
+    if (days < 0) { 
+        months--; 
+        const prevMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate(); 
+        days += prevMonth; 
+    }
+    if (months < 0) { 
+        years--; 
+        months += 12; 
+    }
+
+    // SAFE CHECK: Pehle check karega ki elements About page par hain ya nahi
+    const yrEl = document.getElementById('count-years');
+    const moEl = document.getElementById('count-months');
+    const dyEl = document.getElementById('count-days');
+    const tdEl = document.getElementById('count-total-days');
+
+    // Agar elements milenge tabhi print karega, varna error nahi dega
+    if (yrEl && moEl && dyEl) {
+        yrEl.innerText = years;
+        moEl.innerText = months;
+        dyEl.innerText = days;
+    }
+    if (tdEl) {
+        tdEl.innerText = totalDays;
+    }
+}
+
+// Page load hote hi chalega aur automatically check kar lega
+document.addEventListener('DOMContentLoaded', () => {
+    calculateWebsiteAge();
+});
