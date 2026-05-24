@@ -1038,3 +1038,45 @@ nav .logo {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+/* Volume 1 Card Background Link */
+.volume-page-body.volume-1-bg, 
+.volume-card-class-jo-bhi-aapne-index-html-mein-di-ho { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                      url('../images/volume1-bg.png'); /* <-- Check karo ki yahan naam aapki saved file se match kare */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Volume 2 Card Background Link */
+.volume-page-body.volume-2-bg, 
+.volume-card-class-jo-bhi-aapne-index-html-mein-di-ho { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                      url('../images/volume2-bg.png'); /* <-- Check karo ki yahan naam aapki saved file se match kare */
+    background-size: cover;
+    background-position: center;
+}
+/* Volume 3 Card Background Link */
+.volume-page-body.volume-3-bg, 
+.volume-card-class-jo-bhi-aapne-index-html-mein-di-ho { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                      url('../images/volume3-bg.png'); /* <-- Check karo ki yahan naam aapki saved file se match kare */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Volume 4 Card Background Link */
+.volume-page-body.volume-4-bg, 
+.volume-card-class-jo-bhi-aapne-index-html-mein-di-ho { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                      url('../images/volume4-bg.png'); /* <-- Check karo ki yahan naam aapki saved file se match kare */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Home Page (index.html) ke Volume 4 Card ka Background */
+.card-volume-4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                      url('../images/volume4-bg.png') !important;
+    background-size: cover;
+    background-position: center;
+}

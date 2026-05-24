@@ -65,5 +65,14 @@ Har ek din hai adhura, har ek baat adhuri hai...
         volume: "1",
         topics: ["sad","alone"],
         date: "2026-05-23"
-    }
+    },
+    // shayari.js ke end mein is tarah naya data jodo:
+{
+    title: "Zindagi Ka Sach",
+    text: `Haar kar bhi muskurao,
+    Ek din jeet tumhari hogi.`,
+    volume: "4",        // <-- Naya Volume Number
+    topics: ["motivation"], // <-- Naya Topic Name (choti ABCD mein)
+    date: "2026-05-24"
+}
 ];
